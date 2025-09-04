@@ -1,0 +1,196 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Container */
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  min-width: 350px;
+  max-width: 600px;
+  width: 90%;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container:hover {
+  transform: translateY(-8px);
+}
+
+/* Input */
+input {
+  padding: 14px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.6);
+  width: 70%;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(102, 166, 255, 0.7);
+}
+
+/* Button */
+button {
+  border-radius: 100px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(118, 75, 162, 0.5);
+}
+
+/* Todos List */
+.todos-list {
+  margin-top: 2rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Todo Item */
+.todo {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 14px 20px;
+  margin: 10px 0;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.4s ease forwards;
+  opacity: 0;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Appear animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.close {
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.close:hover {
+  background: #d62839;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 75, 92, 0.5);
+}
+
+/* ========================= */
+/* Responsive Design */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+    width: 95%;
+  }
+
+  input {
+    width: 65%;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .todo {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    padding-top: 30px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 25px;
+    border-radius: 16px;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .todo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .close {
+    align-self: flex-end;
+  }
+}
