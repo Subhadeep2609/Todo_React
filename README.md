@@ -1,4 +1,4 @@
-#React Todo App
+# React Todo App
 
 A modern, minimalistic Todo App built with React and styled using Glassmorphism UI + animations.
 This project is fully responsive, works on all screen sizes, and supports adding, removing, and managing todos with smooth effects.
